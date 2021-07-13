@@ -36,3 +36,53 @@
     transform: rotate(360deg);
   }
 }
+
+.container , {
+  float : left;
+  width : 33.33%;
+  height : 470px;
+}
+
+.Poster , .Wapper_tag{
+  float :left;
+  padding : 5px;
+}
+
+.plot , .actors, .gener ,.title {
+width : 200px;
+height: auto;
+border: 2px solid ;
+border-radius: 10px;
+border-color: #d9dbd9;
+margin : 5px 0;
+padding : 5px;
+background-color: #ebedeb;
+}
+
+.title{
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #c5eefa; /* Green */
+  color: white;
+}
+
+.multiMovieList{
+  margin : 10px 5px;
+  overflow: auto;
+  padding : 4px;
+  width:300px;
+  height: auto;
+
+}
+
+.multi_container{
+    width: 25%;
+    display: inline-block;
+    border: 2px solid ;
+    border-radius: 10px;
+    border-color: #d9dbd9;
+    margin: 10px;
+}
