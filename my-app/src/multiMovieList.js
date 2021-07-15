@@ -4,32 +4,42 @@ import ReactPaginate from 'react-paginate';
 
 export const MovieListing  = (props) => {
 
+// useState for paging state
 const [users, setUsers] = useState(props.listing);
-
 const [pageNumber, setPageNumber] = useState(0);
 const usersPerPage = 3;
 const pagesVisited = pageNumber * usersPerPage;
 
+//searchbar state
+const [input, setInput] = useState ("");
   /* */
 
-const displayUsers = users
-  .slice(pagesVisited, pagesVisited + usersPerPage)
-  .map((props, index) => {
+const displayUsers = users.filter((val) =>{
+  if (input == ""){
+    return val;
+  }else if (val.Title.toLowerCase().includes(input.toLowerCase())){
+    return val;
+
+     }
+
+  }).slice(pagesVisited, pagesVisited + usersPerPage)
+  .map((val , index) => {
    
     const Details = () => {
       return(
         <div>
-        <p>Year = {props.Year}</p>
-        <p>ID = {props.imdbID}</p>
-        <p>Type = {props.Type}</p>
+        <p>Year = {val.Year}</p>
+        <p>ID = {val.imdbID}</p>
+        <p>Type = {val.Type}</p>
         </div>
         );}
 
     return (
           <div className = 'multi_container'>
-          <div className = 'multiMovieList'>  
-          <img src={props.Poster} alt = {props.Title} />
-          <p><strong>{props.Title} </strong></p>
+          <div className = 'multiMovieList'> 
+
+          <img src={val.Poster} alt = {props.Title} />
+          <p><strong>{val.Title} </strong></p>
           <div className='Wapper_tag'>
 
           <SHbutton Details = {Details} />
@@ -43,8 +53,9 @@ const displayUsers = users
   }
 
   return(
-   <div>
-    {displayUsers}
+   <div className = 'wapper'>
+    <input type="text" placeholder = ".... Search Batman Movie Title .... " onChange = {event => {setInput(event.target.value)}}/>
+    <div>{displayUsers}</div>
     <ReactPaginate 
       previousLable = {"Previous"}
       nextLable = {"Next"}

@@ -93,22 +93,44 @@ height: 40px;
 list-style: none;
 display: flex;
 justify-content: center;
+
 }
 .paginationBttns a {
   padding: 10px;
   margin: 8px;
   border-radius: 5px;
-  border:  1px solid #2b2eff;
-  color: #2b2eff;
+  border:  1px solid #e6e6e6;
   cursor: pointer;
+  background-image: linear-gradient(#e8e9eb , #c5c7c9);
 }
 
 .paginationBttns a:hover{
 color: white;
-background-color: #2b2eff;
+background-image: linear-gradient(#e8e9eb , #007dfa);
 }
 
-.paginationActive a {
+.paginationActive a:active {
 color: white;
-background-color: #2b2eff;
+background-image: linear-gradient(#e8e9eb , #c5c7c9);
+}
+
+.wrapper{
+  text-align : center;
+  display :block;
+  margin : 20px;
+}
+
+input {
+
+  text-align: center;
+  margin: 20px;
+  width: 80%;
+  padding : 10px;
+  border-color: skyblue;
+  border-radius: 10px;
+  background-image: linear-gradient(#e8e9eb , #c5c7c9);
+  color: darkblue;
+  font-weight: 600;
+  font-size: 20px;
+
 }
